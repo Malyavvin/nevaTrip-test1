@@ -1,0 +1,292 @@
+body{
+    font-family: 'Open Sans';
+}
+.flex{
+    display: flex;
+}
+.flex__reverse{
+    flex-direction: column-reverse;
+}
+.shown{
+    display: block !important;
+}
+.card:nth-child(n+3){
+    display: none;
+}
+.card__billet{
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+}
+
+.card1__billet{
+    width: 99px;
+    height: 35px;
+    background: #FED74B;
+    top: 40px;
+    font-size: 12px;
+    color: #3E3E3E;
+}
+.card2__billet{
+    width: 129px;
+    height: 43px;
+    background: #7553FF;
+    border-radius: 15px 0px 12px;
+    color: #FFFFFF;
+}
+.big{
+    top: 45px;
+    font-size: 16px;
+}
+.card3__billet{
+    width: 154px;
+    height: 42px;
+    background: #099CE8;
+    color: #FFFFFF;
+}
+.card4__billet{
+    width: 180px;
+    height: 45px;
+    background: #FFD83B;
+    color: #3E3E3E;
+}
+
+.main{
+    padding-top: 30px;
+}
+.sec {
+}
+.container {
+}
+.card__row {
+    align-items: baseline;
+    justify-content: space-evenly;
+    padding: 0px 10px;
+    flex-wrap: wrap;
+}
+.card {
+    flex-wrap: wrap;
+    max-width: 340px;
+    ~ .card{
+        margin-left: 30px;
+    }
+    + .card{
+        margin-top: 30px;
+    }
+}
+.card__img{
+    position: relative;
+    img{
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+.card__content {
+    padding: 0px 10px;
+    border: 0.3px solid #828282;
+    border-radius: 0px 0px 16px 16px;
+}
+.card__time {
+    font-size: 12px;
+    color: #9E9E9E;
+    margin: 14px 0 10px;
+    &::before{
+        content: url("../img/time.svg");
+        margin-right: 10px;
+        vertical-align: sub;
+    }
+}
+.card__title {
+    font-weight: 600;
+    line-height: 157%;
+    color: #404040;
+    margin-bottom: 25px;
+    font-size: 15px;
+}
+.card__desc{
+    margin-bottom: 40px;
+    flex-direction: column;
+}
+span.flex + span.flex{
+    margin-top: 10px;
+}
+span.flex{
+    align-items: flex-start;
+}
+.succ {
+    line-height: 143%;
+    color: #4B4B4B;
+    margin-left: 20px;
+    max-width: 240px;
+}
+
+.card__footer{
+    justify-content: space-between;
+    max-width: 302px;
+    padding-bottom: 20px;
+    align-items: center;
+}
+.first__price {
+    font-size: 30px;
+    line-height: 67%;
+}
+.second__price {
+    font-size: 10px;
+    line-height: 200%;
+}
+.more {
+    width: 165px;
+    height: 44px;
+    display: flex;
+    transition: all .3s;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    
+    background: #FED74B;
+    border: 0.5px solid #CBA500;
+    border-radius: 20px;
+    line-height: 143%;
+    color: #404040;
+    &:hover{
+        background: darken($color: #FED74B, $amount: 10%);
+        color: darken($color: #404040, $amount: 20%);
+        text-decoration: underline;
+    }
+}
+
+.cruises{
+    flex-direction: column;
+    &__list{
+        margin-left: 20px;
+        margin-top: 7px;
+        flex-wrap: wrap;
+        align-items: baseline;
+        li {
+            background: #D9E8FF;
+            border-radius: 11px;
+            cursor: pointer;
+            transition: all .3s;
+            overflow: hidden;
+            ~li{
+                margin-right: 7px;
+            }
+            &:hover{
+                background: #6BA6FF;
+                box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+            }
+        }
+        li:first-of-type{
+            margin-right: 7px;
+        }
+        li + li{
+            margin-top: 7px;
+        }
+        a,
+        .yet{
+            width: 63px;
+            height: 24px;
+            line-height: 143;
+            color: #343434;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all .3s;
+            &:hover{
+                text-decoration: underline;
+                color: #FFFFFF;
+            }
+        }
+        .hidden__block{
+            display: none ;
+        }
+    }
+}
+.yet{
+    background: #D9E8FF;
+    border-radius: 11px;
+    &:hover{
+        background: #6BA6FF;
+        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+    }
+}
+li + .hidden__block{
+    margin-top: 7px;
+}
+
+@media screen and (min-width: 1020px){
+    img{
+        border-radius: 16px 0px 0px 16px;
+    }
+    .card__row{
+        padding: 0px 20px;
+    }
+    .card:nth-child(n+3){
+        display: flex;
+        max-width: unset;
+        flex-wrap: nowrap;
+        max-width: 1070px;
+        .card__content{
+            border-radius: 0px 16px 16px 0px;
+        }
+    }
+    .card:nth-child(-n+2){
+        display: none;
+    }
+    .card__content{
+        padding: 0px 30px 0px 20px;
+    }
+    .card__title{
+        font-size: 26px;
+        margin: 16px 0px 0px;
+    }
+    .card__time{
+        margin-bottom: 10px;
+        font-size: 14px;
+    }
+    .card__desc{
+        margin-bottom: 10px;
+    }
+    .cruises{
+        flex-direction: row;
+        &__list{
+            position: relative;
+            top: -17px;
+        }
+    }
+    .cruise{
+        font-size: 18px;
+    }
+    .succ{
+        max-width: unset;
+    }
+    li a,
+    li .yet {
+        width: 73px !important;
+        height: 28px !important;
+        font-size: 16px !important;
+    }
+    .card__footer{
+        max-width: 330px;
+    }
+    .first__price{
+        font-size: 36px;
+    }
+    .second__price{
+        font-size: 14px;
+    }
+    .more{
+        width: 187px;
+        height: 52px;
+    }
+}
